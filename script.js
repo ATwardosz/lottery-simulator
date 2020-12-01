@@ -1,5 +1,5 @@
+//calculates the number of necessary draws based on form input
 function getTotalNumberOfDraws() {
-    //let numberOfPeriods = Number(document.getElementById('numberof').value);
     let numberOfPeriods = parseInt(document.getElementById('numberof').value, 10);
     console.log(typeof numberOfPeriods);
     let radios = document.getElementsByName('timespan');
@@ -13,6 +13,7 @@ function getTotalNumberOfDraws() {
     return numberOfPeriods * partialNumberOfDraws;
 }
 
+//generates the result of a single lottery draw
 function singleLotteryDraw() {
     function getRandomIntInclusive(min, max) {
         min = Math.ceil(min);
@@ -23,7 +24,7 @@ function singleLotteryDraw() {
     const drawResultInitial = getRandomIntInclusive(1, 13983816);
     if (drawResultInitial === 1) {
         drawResultFinal = 6;
-    } 
+    }
     else if (drawResultInitial > 1 && drawResultInitial <= 259) {
         drawResultFinal = 5;
     }
@@ -40,35 +41,36 @@ function singleLotteryDraw() {
 }
 
 
-function lotterySimulation (numberOfDraws) {
-    let financialResult = 0;
+function lotterySimulation(numberOfDraws) {
+    let financialResult = 0; // how much the user would win or lose after the simulation
     let threes = 0;
     let fours = 0;
     let fives = 0;
     let wins = 0;
-    const drawCost = 3;
+    const drawCost = 3; // cost of a single lottery ticket
     let i;
+    // simulate the given amount of lottery draws and calculate the financial result
     for (i = 0; i < numberOfDraws; i++) {
-        financialResult-=drawCost;
+        financialResult -= drawCost;
         let result = singleLotteryDraw();
         switch (result) {
             case 0:
                 break;
             case 3:
-                financialResult+=24;
-                threes+=1;
+                financialResult += 24;
+                threes += 1;
                 break;
             case 4:
-                financialResult+=171.16;
-                fours+=1;
+                financialResult += 171.16;
+                fours += 1;
                 break;
             case 5:
-                financialResult+=5490.49;
-                fives+=1;
+                financialResult += 5490.49;
+                fives += 1;
                 break;
             case 6:
-                financialResult+=2000000;
-                wins+=1;
+                financialResult += 2000000;
+                wins += 1;
                 break;
         }
     }
