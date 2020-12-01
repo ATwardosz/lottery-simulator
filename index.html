@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item top background-1">
+            <h1>Marzy Ci się bogactwo?</h1>
+        </div>
+        <div class="item background-2">
+            <h2>
+                Sprawdź, czy uda Ci się trafić szóstkę!
+            </h2>
+            <p>Szansa na trafienie szóstki w Lotto wynosi <span class="odds">1:13 983 816</span>, czyli teoretycznie uda
+                Ci się zgarnąć nagrodę
+                główną raz na trzynaście milionów dziewięćset osiemdziesiąt trzy tysiące osiemset szesnaście losowań, w
+                których weźmiesz udział.</p>
+        </div>
+        <div class="item background-1">
+            <h2>Wpisz okres gry w Lotto</h2>
+            <form>
+                <label for="numberof">Liczba</label>
+                <input type="number" min="1" id="numberof" name="numberof" required><br><br>
+                <label for="timespan">Tydzień</label>
+                <input type="radio" id="week" name="timespan" value=3 required>
+                <label for="timespan">Miesiąc</label>
+                <input type="radio" id="month" name="timespan" value=12.25 required>
+                <label for="timespan">Rok</label>
+                <input type="radio" id="year" name="timespan" value=156 required><br><br>
+                <div class="buttonholder">
+                    <input type="submit" id="submitdraw" value="Graj na loterii!" class="button"
+                        onclick="console.log(lotterySimulation(getTotalNumberOfDraws()))">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
