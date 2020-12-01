@@ -4,18 +4,20 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Josefin+Sans:wght@300&display=swap"
+        rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="item top background-1">
+    <div class="container-columnn">
+        <div class="item-column top background-1">
             <h1>Marzy Ci się bogactwo?</h1>
         </div>
-        <div class="item background-2">
+        <div class="item-column background-2 middle">
             <h2>
                 Sprawdź, czy uda Ci się trafić szóstkę!
             </h2>
@@ -24,22 +26,29 @@
                 główną raz na trzynaście milionów dziewięćset osiemdziesiąt trzy tysiące osiemset szesnaście losowań, w
                 których weźmiesz udział.</p>
         </div>
-        <div class="item background-1">
-            <h2>Wpisz okres gry w Lotto</h2>
-            <form>
-                <label for="numberof">Liczba</label>
-                <input type="number" min="1" id="numberof" name="numberof" required><br><br>
-                <label for="timespan">Tydzień</label>
-                <input type="radio" id="week" name="timespan" value=3 required>
-                <label for="timespan">Miesiąc</label>
-                <input type="radio" id="month" name="timespan" value=12.25 required>
-                <label for="timespan">Rok</label>
-                <input type="radio" id="year" name="timespan" value=156 required><br><br>
-                <div class="buttonholder">
-                    <input type="submit" id="submitdraw" value="Graj na loterii!" class="button"
-                        onclick="console.log(lotterySimulation(getTotalNumberOfDraws()))">
+        <div class="item-column container-row background-1 bottom">
+            <div class="item-row container-column">
+                <h2 class="item-column">Wpisz okres gry w Lotto</h2>
+                <div class="form item-column">
+                    <form>
+                        <label for="numberof">Liczba</label>
+                        <input type="number" min="1" id="numberof" name="numberof" required><br><br>
+                        <label for="timespan">Tydzień</label>
+                        <input type="radio" id="week" name="timespan" value=3 required>
+                        <label for="timespan">Miesiąc</label>
+                        <input type="radio" id="month" name="timespan" value=12.25 required>
+                        <label for="timespan">Rok</label>
+                        <input type="radio" id="year" name="timespan" value=156 required><br><br>
+                        <div class="buttonholder">
+                            <input type="submit" id="submitdraw" value="Graj na loterii!" class="button"
+                                onclick="console.log(lotterySimulation(getTotalNumberOfDraws()))">
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+            <div class="item-row">
+                <p span class="question">?</p>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
